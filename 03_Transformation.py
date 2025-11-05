@@ -1,7 +1,7 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC ---
-# MAGIC # 🔧 Étape 4 : Transformation et nettoyage des données
+# MAGIC # 🔧 Étape 3 : Transformation et nettoyage des données
 # MAGIC
 # MAGIC Maintenant que nous avons exploré nos données, nous allons les nettoyer et les transformer pour faciliter l'analyse et le calcul d'indicateurs.
 # MAGIC

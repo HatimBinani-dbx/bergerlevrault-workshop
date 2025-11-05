@@ -1,7 +1,7 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC ---
-# MAGIC # 📊 Étape 5 : Calcul des KPI de maintenance
+# MAGIC # 📊 Étape 4 : Calcul des KPI de maintenance
 # MAGIC
 # MAGIC Maintenant que nos données sont nettoyées et unifiées, calculons les indicateurs clés de performance (KPI) essentiels pour le pilotage de la maintenance.
 # MAGIC
@@ -389,6 +389,7 @@ print("🚀 Analyse complète de la maintenance terminée !")
 
 # COMMAND ----------
 
+# DBTITLE 1,🎯 Query 1: KPI Summary Card
 # MAGIC %md
 # MAGIC ---
 # MAGIC # 🎉 Conclusion de l'atelier

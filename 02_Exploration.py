@@ -1,7 +1,7 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC ---
-# MAGIC # 🔍 Étape 3 : Exploration des données GMAO
+# MAGIC # 🔍 Étape 2 : Exploration des données GMAO
 # MAGIC
 # MAGIC Maintenant que nos données sont ingérées, explorons-les pour mieux comprendre notre parc d'équipements et nos activités de maintenance.
 # MAGIC
@@ -261,4 +261,5 @@ display(spark.sql(
 # MAGIC ## 🔍 ?
 
 # COMMAND ----------
+
 

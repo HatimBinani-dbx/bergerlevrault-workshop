@@ -1,7 +1,7 @@
 # Databricks notebook source
 # MAGIC %md
 # MAGIC ---
-# MAGIC # 📥 Étape 2 : Ingestion des données avec Autoloader
+# MAGIC # 📥 Étape 1 : Ingestion des données avec Autoloader
 # MAGIC
 # MAGIC **Autoloader** est une fonctionnalité Databricks qui permet de charger automatiquement des fichiers dès qu'ils arrivent dans un répertoire. C'est parfait pour traiter des données en continu !
 # MAGIC
