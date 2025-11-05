@@ -166,76 +166,94 @@ print(f"\n📊 Mois le plus chargé : {monthly_data.loc[monthly_data['count'].id
 
 # COMMAND ----------
 
-# DBTITLE 1,🔧 Exploration des interventions
-from pyspark.sql.functions import avg, min, max, stddev
-# Exploration des interventions
-print("🔧 ANALYSE DES INTERVENTIONS")
+# DBTITLE 1,🔧 Exploration des interventions (SQL)
+# Exploration des interventions via SQL
+print("🔧 ANALYSE DES INTERVENTIONS (SQL)")
 print("=" * 35)
 
-# Vue d'ensemble
-print("📋 Aperçu des interventions :")
-display(interventions_table.limit(5))
+table_interventions = f"{catalog}.{schema}.interventions"
 
-print(f"\n📊 Nombre total d'interventions : {interventions_table.count()}")
+# Vue d'ensemble (échantillon)
+print("📋 Aperçu des interventions :")
+display(spark.sql(f"SELECT * FROM {table_interventions} LIMIT 5"))
+
+# Nombre total d'interventions
+print("\n📊 Nombre total d'interventions :")
+display(spark.sql(f"SELECT COUNT(*) AS total_interventions FROM {table_interventions}"))
 
 # Répartition par type d'intervention
 print("\n🔧 Répartition par type d'intervention :")
-intervention_types_count = interventions_table.groupBy("intervention_type").count().orderBy(desc("count"))
-display(intervention_types_count)
+display(spark.sql(
+    f"""
+    SELECT intervention_type, COUNT(*) AS count
+    FROM {table_interventions}
+    GROUP BY intervention_type
+    ORDER BY count DESC
+    """
+))
 
 # Statistiques sur les durées
 print("\n⏱️ Statistiques sur les durées d'intervention :")
-
-# Statistiques sur les durées
-duration_stats = interventions_table.select(
-
-    avg("duration_hours").alias("duree_moyenne"),
-    min("duration_hours").alias("duree_min"),
-    max("duration_hours").alias("duree_max"),
-    stddev("duration_hours").alias("ecart_type")
-)
-display(duration_stats)
+display(spark.sql(
+    f"""
+    SELECT
+      AVG(CAST(duration_hours AS DOUBLE)) AS duree_moyenne,
+      MIN(CAST(duration_hours AS DOUBLE)) AS duree_min,
+      MAX(CAST(duration_hours AS DOUBLE)) AS duree_max,
+      STDDEV(CAST(duration_hours AS DOUBLE)) AS ecart_type
+    FROM {table_interventions}
+    """
+))
 
 # COMMAND ----------
 
-# DBTITLE 1,💰 Analyse des coûts de maintenance
-from pyspark.sql.functions import sum, avg, count, col, desc
-
-# Analyse des coûts de maintenance
-print("💰 ANALYSE DES COÛTS")
+# DBTITLE 1,💰 Analyse des coûts de maintenance (SQL)
+# Analyse des coûts de maintenance via SQL
+print("💰 ANALYSE DES COÛTS (SQL)")
 print("=" * 25)
 
 # Statistiques générales des coûts
-cost_stats = interventions_table.select(
-
-    sum("parts_cost").alias("cout_total_pieces"),
-    sum("labor_cost").alias("cout_total_main_oeuvre"),
-    avg("parts_cost").alias("cout_moyen_pieces"),
-    avg("labor_cost").alias("cout_moyen_main_oeuvre")
-)
-
 print("📊 Statistiques des coûts :")
-display(cost_stats)
-
-# Coût total par intervention
-interventions_with_total_cost = interventions_table.withColumn(
-    "total_cost", (col("parts_cost").cast("float")) + (col("labor_cost").cast("float"))
-)
+display(spark.sql(
+    f"""
+    SELECT
+      SUM(CAST(parts_cost AS DOUBLE)) AS cout_total_pieces,
+      SUM(CAST(labor_cost AS DOUBLE)) AS cout_total_main_oeuvre,
+      AVG(CAST(parts_cost AS DOUBLE)) AS cout_moyen_pieces,
+      AVG(CAST(labor_cost AS DOUBLE)) AS cout_moyen_main_oeuvre
+    FROM {table_interventions}
+    """
+))
 
 # Top 10 des interventions les plus coûteuses
 print("\n💸 Top 10 des interventions les plus coûteuses :")
-top_costly_interventions = interventions_with_total_cost.select(
-    "intervention_id", "intervention_type", "parts_cost", "labor_cost", "total_cost"
-).orderBy(desc("total_cost")).limit(10)
-display(top_costly_interventions)
+display(spark.sql(
+    f"""
+    SELECT
+      intervention_id,
+      intervention_type,
+      parts_cost,
+      labor_cost,
+      (CAST(parts_cost AS DOUBLE) + CAST(labor_cost AS DOUBLE)) AS total_cost
+    FROM {table_interventions}
+    ORDER BY total_cost DESC
+    LIMIT 10
+    """
+))
 
 # Répartition des coûts par type d'intervention
 print("\n📈 Coût moyen par type d'intervention :")
-cost_by_type = interventions_with_total_cost.groupBy("intervention_type").agg(
-    avg("total_cost").alias("cout_moyen"),
-    count("*").alias("nombre_interventions")
-).orderBy(desc("cout_moyen"))
-display(cost_by_type)
+display(spark.sql(
+    f"""
+    SELECT
+      intervention_type,
+      AVG(CAST(parts_cost AS DOUBLE) + CAST(labor_cost AS DOUBLE)) AS cout_moyen,
+      COUNT(*) AS nombre_interventions
+    FROM {table_interventions}
+    GROUP BY intervention_type
+    ORDER BY cout_moyen DESC
+    """
+))
 
 # COMMAND ----------
 
