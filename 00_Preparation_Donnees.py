@@ -39,7 +39,7 @@ from datetime import datetime, timedelta
 import random
 
 # Définition du chemin de travail
-workshop_path = "/Workspace/Users/" + spark.sql("SELECT current_user()").collect()[0][0] + "/gmao_workshop"
+workshop_path = "/Workspace/Users/" + spark.sql("SELECT current_user()").collect()[0][0] + "/bergerlevrault-workshop"
 data_path = workshop_path + "/data"
 
 # Création des répertoires si ils n'existent pas
