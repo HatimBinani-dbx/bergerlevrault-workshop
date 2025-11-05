@@ -56,6 +56,20 @@ import csv
 import random
 from datetime import datetime, timedelta
 
+# Utilitaire: écriture de CSV en plusieurs fichiers (chunking)
+def write_csv_chunks(records, directory_path, base_filename, chunk_size):
+    if not records:
+        return
+    for start_idx in range(0, len(records), chunk_size):
+        chunk = records[start_idx:start_idx + chunk_size]
+        part_number = (start_idx // chunk_size) + 1
+        output_file = f"{directory_path}/{base_filename}_{part_number}.csv"
+        with open(output_file, 'w', newline='', encoding='utf-8') as file:
+            writer = csv.DictWriter(file, fieldnames=chunk[0].keys())
+            writer.writeheader()
+            writer.writerows(chunk)
+        print(f"📄 Fichier sauvegardé : {output_file} ({len(chunk)} lignes)")
+
 # Définition des types d'équipements typiques en industrie
 equipment_types = [
     "Compresseur", "Pompe centrifuge", "Moteur électrique", "Convoyeur", 
@@ -71,9 +85,13 @@ locations = [
 
 manufacturers = ["Siemens", "ABB", "Schneider", "Danfoss", "Grundfos", "Atlas Copco", "Bosch Rexroth"]
 
-# Génération de 50 équipements
+# Paramètres de génération
+EQUIPMENTS_COUNT = 500
+EQUIPMENTS_CHUNK_SIZE = 100
+
+# Génération d'un grand nombre d'équipements
 equipments_data = []
-for i in range(1, 51):
+for i in range(1, EQUIPMENTS_COUNT + 1):
     install_date = datetime.now() - timedelta(days=random.randint(365, 3650))  # Entre 1 et 10 ans
     
     equipment = {
@@ -90,15 +108,9 @@ for i in range(1, 51):
     }
     equipments_data.append(equipment)
 
-# Sauvegarde en CSV
-equipments_file = f"{data_path}/equipments.csv"
-with open(equipments_file, 'w', newline='', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=equipments_data[0].keys())
-    writer.writeheader()
-    writer.writerows(equipments_data)
-
-print(f"✅ Fichier équipements créé : {len(equipments_data)} équipements générés")
-print(f"📄 Fichier sauvegardé : {data_path}/equipments.csv")
+# Sauvegarde en plusieurs CSV (chunking)
+print(f"✅ Données équipements générées : {len(equipments_data)} enregistrements")
+write_csv_chunks(equipments_data, data_path, "equipments", EQUIPMENTS_CHUNK_SIZE)
 print("\n📋 Aperçu des données :")
 for i, eq in enumerate(equipments_data[:3]):
     print(f"  {i+1}. {eq['equipment_name']} - {eq['location']} - {eq['criticality']}")
@@ -117,9 +129,13 @@ priorities = ["Très urgent", "Urgent", "Normal", "Programmé"]
 statuses = ["Ouvert", "En cours", "Terminé", "Annulé"]
 technicians = ["Martin Dubois", "Sophie Laurent", "Pierre Moreau", "Marie Durand", "Jean Leroy", "Claire Bernard"]
 
-# Génération de 200 ordres de travail
+# Paramètres de génération
+WORK_ORDERS_COUNT = 5000
+WORK_ORDERS_CHUNK_SIZE = 1000
+
+# Génération d'un grand nombre d'ordres de travail
 work_orders_data = []
-for i in range(1, 201):
+for i in range(1, WORK_ORDERS_COUNT + 1):
     # Date de création dans les 6 derniers mois
     creation_date = datetime.now() - timedelta(days=random.randint(1, 180))
     
@@ -156,16 +172,9 @@ for i in range(1, 201):
     }
     work_orders_data.append(work_order)
 
-# Sauvegarde en CSV
-work_orders_file = f"{data_path}/work_orders.csv"
-with open(work_orders_file, 'w', newline='', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=work_orders_data[0].keys())
-    writer.writeheader()
-    writer.writerows(work_orders_data)
-
-
-print(f"✅ Fichier ordres de travail créé : {len(work_orders_data)} ordres générés")
-print(f"📄 Fichier sauvegardé : {data_path}/work_orders.csv")
+# Sauvegarde en plusieurs CSV (chunking)
+print(f"✅ Données ordres de travail générées : {len(work_orders_data)} enregistrements")
+write_csv_chunks(work_orders_data, data_path, "work_orders", WORK_ORDERS_CHUNK_SIZE)
 print("\n📋 Aperçu des données :")
 for i, wo in enumerate(work_orders_data[:3]):
     print(f"  {i+1}. {wo['work_order_id']} - {wo['work_order_type']} - {wo['status']}")
@@ -187,6 +196,9 @@ parts_used = [
     "Huile hydraulique", "Graisse", "Contacteur", "Fusible", "Capteur",
     "Vérin", "Flexible", "Boulon", "Écrou", "Ressort"
 ]
+
+# Paramètres de génération
+INTERVENTIONS_CHUNK_SIZE = 2000
 
 # Génération d'interventions pour les ordres de travail terminés
 interventions_data = []
@@ -224,15 +236,9 @@ for work_order in work_orders_data:
             interventions_data.append(intervention)
             intervention_id += 1
 
-# Sauvegarde en CSV
-interventions_file = f"{data_path}/interventions.csv"
-with open(interventions_file, 'w', newline='', encoding='utf-8') as file:
-    writer = csv.DictWriter(file, fieldnames=interventions_data[0].keys())
-    writer.writeheader()
-    writer.writerows(interventions_data)
-
-print(f"✅ Fichier interventions créé : {len(interventions_data)} interventions générées")
-print(f"📄 Fichier sauvegardé : {data_path}/interventions.csv")
+# Sauvegarde en plusieurs CSV (chunking)
+print(f"✅ Données interventions générées : {len(interventions_data)} enregistrements")
+write_csv_chunks(interventions_data, data_path, "interventions", INTERVENTIONS_CHUNK_SIZE)
 print("\n📋 Aperçu des données :")
 for i, inter in enumerate(interventions_data[:3]):
     print(f"  {i+1}. {inter['intervention_id']} - {inter['intervention_type']} - {inter['duration_hours']}h")
@@ -271,10 +277,22 @@ dbutils.fs.mkdirs("/Volumes/gmao_catalog/gmao_schema/gmao_volume/equipments")
 dbutils.fs.mkdirs("/Volumes/gmao_catalog/gmao_schema/gmao_volume/work_orders")
 dbutils.fs.mkdirs("/Volumes/gmao_catalog/gmao_schema/gmao_volume/interventions")
 
-# Copie des fichiers générés dans les sous-dossiers du volume Unity Catalog
-dbutils.fs.cp(f"{data_path}/equipments.csv", "/Volumes/gmao_catalog/gmao_schema/gmao_volume/equipments/equipments.csv")
-dbutils.fs.cp(f"{data_path}/work_orders.csv", "/Volumes/gmao_catalog/gmao_schema/gmao_volume/work_orders/work_orders.csv")
-dbutils.fs.cp(f"{data_path}/interventions.csv", "/Volumes/gmao_catalog/gmao_schema/gmao_volume/interventions/interventions.csv")
+# Copie des fichiers générés (plusieurs fichiers par dataset) vers le volume Unity Catalog
+all_generated_files = dbutils.fs.ls(data_path)
+for f in all_generated_files:
+    name = f.name
+    if name.startswith("equipments") and name.endswith('.csv'):
+        target = f"/Volumes/gmao_catalog/gmao_schema/gmao_volume/equipments/{name}"
+        dbutils.fs.cp(f.path, target)
+        print(f"📤 Copié: {name} -> {target}")
+    elif name.startswith("work_orders") and name.endswith('.csv'):
+        target = f"/Volumes/gmao_catalog/gmao_schema/gmao_volume/work_orders/{name}"
+        dbutils.fs.cp(f.path, target)
+        print(f"📤 Copié: {name} -> {target}")
+    elif name.startswith("interventions") and name.endswith('.csv'):
+        target = f"/Volumes/gmao_catalog/gmao_schema/gmao_volume/interventions/{name}"
+        dbutils.fs.cp(f.path, target)
+        print(f"📤 Copié: {name} -> {target}")
 
 # Vérification du contenu du volume et des sous-dossiers
 for folder in ["equipments", "work_orders", "interventions"]:
