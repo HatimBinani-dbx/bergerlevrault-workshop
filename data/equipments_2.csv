@@ -1,0 +1,101 @@
+equipment_id,equipment_name,equipment_type,location,manufacturer,model,serial_number,installation_date,criticality,status
+EQ101,Moteur électrique 101,Transformateur,Atelier C,Danfoss,MOD-6065,SN500159,2021-09-20,Important,En service
+EQ102,Pompe centrifuge 102,Presse hydraulique,Zone de stockage,ABB,MOD-2750,SN837631,2023-07-24,Critique,En maintenance
+EQ103,Ventilateur 103,Ventilateur,Atelier B,Danfoss,MOD-5082,SN136503,2021-02-19,Standard,En service
+EQ104,Transformateur 104,Chaudière,Salle des machines,Bosch Rexroth,MOD-4548,SN952248,2023-02-11,Standard,En service
+EQ105,Moteur électrique 105,Échangeur thermique,Zone de conditionnement,Atlas Copco,MOD-6630,SN154791,2016-12-09,Critique,En service
+EQ106,Pompe centrifuge 106,Transformateur,Atelier C,Bosch Rexroth,MOD-9056,SN709058,2019-11-06,Critique,En service
+EQ107,Ventilateur 107,Convoyeur,Zone de stockage,Danfoss,MOD-6798,SN364271,2023-01-30,Critique,En service
+EQ108,Presse hydraulique 108,Transformateur,Chaufferie,Schneider,MOD-3110,SN953274,2022-11-30,Standard,En service
+EQ109,Ventilateur 109,Convoyeur,Ligne de production 1,Bosch Rexroth,MOD-5430,SN256393,2016-08-31,Important,Arrêté
+EQ110,Moteur électrique 110,Ventilateur,Chaufferie,Siemens,MOD-7963,SN712724,2020-10-22,Important,En service
+EQ111,Presse hydraulique 111,Pompe centrifuge,Zone de stockage,ABB,MOD-6954,SN385749,2020-12-29,Standard,En service
+EQ112,Robot industriel 112,Pompe centrifuge,Atelier B,Grundfos,MOD-5943,SN810903,2022-04-30,Standard,En service
+EQ113,Pompe centrifuge 113,Pompe centrifuge,Zone de stockage,Danfoss,MOD-6281,SN603178,2017-05-23,Important,Arrêté
+EQ114,Échangeur thermique 114,Moteur électrique,Zone de stockage,Atlas Copco,MOD-9948,SN103955,2024-11-05,Standard,Arrêté
+EQ115,Chaudière 115,Pompe centrifuge,Zone de conditionnement,ABB,MOD-2128,SN971485,2019-05-05,Standard,En service
+EQ116,Compresseur 116,Compresseur,Zone de stockage,Atlas Copco,MOD-3521,SN528183,2022-08-27,Important,Arrêté
+EQ117,Réducteur 117,Convoyeur,Ligne de production 1,Atlas Copco,MOD-1676,SN866079,2018-02-16,Standard,En maintenance
+EQ118,Moteur électrique 118,Transformateur,Ligne de production 1,Bosch Rexroth,MOD-7361,SN454121,2016-08-22,Critique,En maintenance
+EQ119,Réducteur 119,Pompe centrifuge,Ligne de production 1,Grundfos,MOD-9658,SN842404,2024-07-24,Critique,En service
+EQ120,Groupe électrogène 120,Échangeur thermique,Zone de stockage,ABB,MOD-7316,SN196371,2021-08-14,Important,En maintenance
+EQ121,Convoyeur 121,Moteur électrique,Salle des machines,Danfoss,MOD-7376,SN191887,2021-06-03,Standard,En service
+EQ122,Convoyeur 122,Pompe centrifuge,Atelier B,Schneider,MOD-2359,SN351325,2023-01-17,Standard,En service
+EQ123,Moteur électrique 123,Convoyeur,Atelier A,ABB,MOD-5514,SN852798,2019-04-11,Standard,Arrêté
+EQ124,Groupe électrogène 124,Réducteur,Ligne de production 1,Bosch Rexroth,MOD-9205,SN196498,2019-09-20,Standard,En service
+EQ125,Moteur électrique 125,Échangeur thermique,Atelier A,Siemens,MOD-3426,SN550696,2023-07-27,Important,Arrêté
+EQ126,Compresseur 126,Convoyeur,Atelier B,ABB,MOD-2223,SN781694,2023-01-24,Standard,En maintenance
+EQ127,Compresseur 127,Échangeur thermique,Chaufferie,Bosch Rexroth,MOD-5795,SN277551,2020-05-22,Standard,En service
+EQ128,Moteur électrique 128,Compresseur,Zone de stockage,ABB,MOD-4133,SN337940,2018-01-09,Standard,En service
+EQ129,Réducteur 129,Échangeur thermique,Atelier A,Siemens,MOD-3538,SN349090,2023-08-19,Critique,En service
+EQ130,Réducteur 130,Pompe centrifuge,Salle des machines,Grundfos,MOD-4609,SN303686,2022-05-16,Critique,En service
+EQ131,Presse hydraulique 131,Convoyeur,Salle des machines,Siemens,MOD-9143,SN353076,2022-07-14,Critique,Arrêté
+EQ132,Moteur électrique 132,Réducteur,Salle des machines,Schneider,MOD-5177,SN772009,2019-10-23,Critique,En service
+EQ133,Groupe électrogène 133,Ventilateur,Zone de conditionnement,Schneider,MOD-3767,SN632182,2023-11-25,Standard,En service
+EQ134,Robot industriel 134,Groupe électrogène,Atelier A,Danfoss,MOD-6053,SN706616,2018-06-10,Standard,En maintenance
+EQ135,Pompe centrifuge 135,Presse hydraulique,Atelier C,Atlas Copco,MOD-4795,SN362672,2024-03-19,Important,En service
+EQ136,Transformateur 136,Presse hydraulique,Atelier A,ABB,MOD-2096,SN994446,2018-10-06,Critique,En service
+EQ137,Chaudière 137,Réducteur,Station de pompage,Bosch Rexroth,MOD-5482,SN915330,2024-05-05,Important,En maintenance
+EQ138,Ventilateur 138,Compresseur,Ligne de production 1,Atlas Copco,MOD-1117,SN563806,2023-08-30,Critique,En service
+EQ139,Moteur électrique 139,Échangeur thermique,Zone de stockage,Siemens,MOD-7702,SN811648,2017-06-08,Important,Arrêté
+EQ140,Compresseur 140,Transformateur,Ligne de production 1,Siemens,MOD-2491,SN343473,2023-10-20,Critique,En maintenance
+EQ141,Presse hydraulique 141,Compresseur,Station de pompage,Grundfos,MOD-4648,SN918847,2022-07-07,Standard,En service
+EQ142,Échangeur thermique 142,Échangeur thermique,Salle des machines,Grundfos,MOD-4161,SN843547,2018-12-31,Important,En service
+EQ143,Convoyeur 143,Réducteur,Atelier A,Bosch Rexroth,MOD-3017,SN878056,2016-04-22,Standard,En service
+EQ144,Transformateur 144,Moteur électrique,Zone de conditionnement,Atlas Copco,MOD-9624,SN445202,2018-01-12,Standard,Arrêté
+EQ145,Ventilateur 145,Presse hydraulique,Salle des machines,Bosch Rexroth,MOD-4538,SN654831,2020-10-08,Critique,En service
+EQ146,Moteur électrique 146,Transformateur,Ligne de production 2,Atlas Copco,MOD-6265,SN741895,2019-07-01,Standard,En maintenance
+EQ147,Chaudière 147,Convoyeur,Station de pompage,Siemens,MOD-8945,SN169013,2018-12-08,Important,Arrêté
+EQ148,Échangeur thermique 148,Pompe centrifuge,Chaufferie,Bosch Rexroth,MOD-6315,SN892739,2018-12-04,Critique,En maintenance
+EQ149,Compresseur 149,Transformateur,Atelier C,Bosch Rexroth,MOD-2023,SN705345,2023-12-16,Standard,En maintenance
+EQ150,Presse hydraulique 150,Réducteur,Zone de stockage,Schneider,MOD-1632,SN337520,2017-04-20,Important,En service
+EQ151,Pompe centrifuge 151,Échangeur thermique,Atelier A,Bosch Rexroth,MOD-4132,SN709868,2017-08-07,Standard,Arrêté
+EQ152,Chaudière 152,Convoyeur,Atelier A,Atlas Copco,MOD-6535,SN741543,2020-05-31,Critique,En service
+EQ153,Échangeur thermique 153,Moteur électrique,Zone de stockage,ABB,MOD-1322,SN717688,2017-01-27,Important,En service
+EQ154,Échangeur thermique 154,Convoyeur,Atelier C,Siemens,MOD-3107,SN432886,2016-04-29,Important,En service
+EQ155,Groupe électrogène 155,Moteur électrique,Chaufferie,Grundfos,MOD-8086,SN541670,2022-11-22,Standard,En service
+EQ156,Ventilateur 156,Réducteur,Atelier B,Atlas Copco,MOD-8029,SN203315,2017-09-12,Critique,En maintenance
+EQ157,Convoyeur 157,Pompe centrifuge,Atelier C,Grundfos,MOD-9535,SN815946,2016-10-21,Standard,En service
+EQ158,Groupe électrogène 158,Groupe électrogène,Ligne de production 2,ABB,MOD-2122,SN473368,2016-09-25,Important,En maintenance
+EQ159,Transformateur 159,Chaudière,Zone de conditionnement,ABB,MOD-6287,SN829245,2019-03-06,Important,En service
+EQ160,Robot industriel 160,Moteur électrique,Zone de stockage,Schneider,MOD-7990,SN961474,2020-07-04,Standard,En service
+EQ161,Presse hydraulique 161,Ventilateur,Zone de stockage,Danfoss,MOD-9020,SN442338,2016-01-29,Important,En maintenance
+EQ162,Convoyeur 162,Moteur électrique,Zone de stockage,ABB,MOD-9058,SN137714,2018-03-14,Critique,Arrêté
+EQ163,Robot industriel 163,Échangeur thermique,Atelier C,Danfoss,MOD-5648,SN245130,2022-11-08,Important,En maintenance
+EQ164,Compresseur 164,Moteur électrique,Ligne de production 2,Grundfos,MOD-2905,SN741769,2022-12-16,Important,En service
+EQ165,Groupe électrogène 165,Moteur électrique,Ligne de production 2,ABB,MOD-8307,SN918588,2016-01-07,Important,Arrêté
+EQ166,Presse hydraulique 166,Pompe centrifuge,Chaufferie,Danfoss,MOD-6635,SN473437,2022-10-31,Important,En service
+EQ167,Transformateur 167,Convoyeur,Zone de stockage,Danfoss,MOD-1094,SN511681,2016-08-22,Important,Arrêté
+EQ168,Robot industriel 168,Moteur électrique,Atelier A,Schneider,MOD-2493,SN527786,2016-06-26,Critique,En service
+EQ169,Compresseur 169,Pompe centrifuge,Chaufferie,Grundfos,MOD-1629,SN470242,2018-09-28,Standard,En service
+EQ170,Pompe centrifuge 170,Convoyeur,Atelier B,Bosch Rexroth,MOD-2944,SN485827,2023-11-30,Standard,En service
+EQ171,Chaudière 171,Transformateur,Salle des machines,Grundfos,MOD-2643,SN756942,2015-12-03,Standard,En service
+EQ172,Compresseur 172,Compresseur,Ligne de production 1,ABB,MOD-3342,SN230941,2019-06-20,Standard,En service
+EQ173,Pompe centrifuge 173,Ventilateur,Zone de stockage,Bosch Rexroth,MOD-4984,SN101050,2024-01-18,Important,En service
+EQ174,Réducteur 174,Échangeur thermique,Atelier A,Atlas Copco,MOD-7446,SN556974,2020-06-10,Important,Arrêté
+EQ175,Réducteur 175,Transformateur,Chaufferie,ABB,MOD-1561,SN408897,2019-12-03,Important,En service
+EQ176,Groupe électrogène 176,Pompe centrifuge,Ligne de production 1,Danfoss,MOD-6433,SN910743,2023-07-11,Important,Arrêté
+EQ177,Ventilateur 177,Réducteur,Zone de conditionnement,ABB,MOD-8886,SN658884,2021-12-21,Standard,En maintenance
+EQ178,Moteur électrique 178,Presse hydraulique,Zone de stockage,Grundfos,MOD-2403,SN947647,2022-09-18,Critique,En service
+EQ179,Compresseur 179,Groupe électrogène,Atelier C,Siemens,MOD-7830,SN132441,2017-07-29,Important,En maintenance
+EQ180,Réducteur 180,Compresseur,Zone de stockage,Atlas Copco,MOD-5152,SN644813,2023-02-06,Critique,Arrêté
+EQ181,Chaudière 181,Groupe électrogène,Atelier A,Danfoss,MOD-7132,SN684496,2019-03-01,Standard,En service
+EQ182,Réducteur 182,Transformateur,Atelier A,Schneider,MOD-2454,SN194092,2019-04-29,Important,En service
+EQ183,Robot industriel 183,Ventilateur,Ligne de production 1,Atlas Copco,MOD-2062,SN188533,2019-04-27,Important,Arrêté
+EQ184,Robot industriel 184,Compresseur,Atelier B,Bosch Rexroth,MOD-7420,SN695243,2022-05-27,Important,Arrêté
+EQ185,Ventilateur 185,Ventilateur,Zone de stockage,Danfoss,MOD-8382,SN936891,2023-10-12,Standard,En service
+EQ186,Groupe électrogène 186,Transformateur,Zone de stockage,Schneider,MOD-5470,SN195206,2022-01-03,Important,En service
+EQ187,Moteur électrique 187,Robot industriel,Atelier A,ABB,MOD-6272,SN339232,2024-04-06,Standard,En service
+EQ188,Presse hydraulique 188,Transformateur,Atelier C,Grundfos,MOD-5570,SN960399,2024-05-02,Important,En service
+EQ189,Convoyeur 189,Pompe centrifuge,Zone de conditionnement,Bosch Rexroth,MOD-7496,SN582489,2016-08-06,Critique,En service
+EQ190,Ventilateur 190,Convoyeur,Ligne de production 2,Atlas Copco,MOD-7504,SN676847,2020-08-08,Important,Arrêté
+EQ191,Convoyeur 191,Chaudière,Ligne de production 2,Atlas Copco,MOD-9999,SN867128,2024-03-17,Standard,En service
+EQ192,Ventilateur 192,Presse hydraulique,Zone de conditionnement,Atlas Copco,MOD-6906,SN158030,2024-05-10,Critique,En maintenance
+EQ193,Transformateur 193,Pompe centrifuge,Ligne de production 1,Danfoss,MOD-6618,SN251908,2018-01-16,Important,En service
+EQ194,Convoyeur 194,Pompe centrifuge,Zone de stockage,Atlas Copco,MOD-9325,SN687071,2016-07-30,Critique,Arrêté
+EQ195,Réducteur 195,Ventilateur,Zone de stockage,Atlas Copco,MOD-4814,SN751834,2017-08-02,Critique,En service
+EQ196,Moteur électrique 196,Compresseur,Ligne de production 1,Grundfos,MOD-4451,SN483131,2017-01-30,Critique,En service
+EQ197,Compresseur 197,Pompe centrifuge,Station de pompage,Danfoss,MOD-7482,SN657075,2024-08-10,Critique,Arrêté
+EQ198,Presse hydraulique 198,Pompe centrifuge,Atelier B,Grundfos,MOD-9316,SN227619,2024-06-13,Standard,En service
+EQ199,Convoyeur 199,Presse hydraulique,Chaufferie,ABB,MOD-2498,SN645598,2020-03-01,Important,En maintenance
+EQ200,Ventilateur 200,Échangeur thermique,Ligne de production 1,Grundfos,MOD-8303,SN799544,2019-04-02,Important,Arrêté
